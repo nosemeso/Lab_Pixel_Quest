@@ -4,33 +4,35 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class Geocontroler : MonoBehaviour
 {
-
     public string VariableOne = "Hello";
-
+    public string NextlLevel;
     int var = 3;
 
     private Rigidbody2D kuri;
 
     public int speed = 5;
 
-    public object SceneMAnager { get; private set; }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.tag)
         {
             case "Death":
-                {
+                {  
                     Debug.Log("Player Has Died");
                     string thisLevel = SceneManager.GetActiveScene().name;
                     SceneManager.LoadScene(thisLevel);
                     break;
                 }
+              
+            case "Finish":
+            {
+                SceneManager.LoadScene(NextlLevel);
+                break;
 
-           
+            }
 
         }
 

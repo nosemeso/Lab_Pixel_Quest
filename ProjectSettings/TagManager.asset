@@ -9,6 +9,10 @@ TagManager:
   - Health
   - Coin
   - Win
+  - Enemy
+  - TalkZone
+  - Bullet
+  - Won
   layers:
   - Default
   - TransparentFX
