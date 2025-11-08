@@ -28,7 +28,7 @@ public class PlayerJump : MonoBehaviour
     {
         _grounded = Physics2D.OverlapCapsule(feet.position, new Vector2(CapsultHeight, CapsuleRadius), CapsuleDirection2D.Horizontal, 0, groundLayer);
 
-        if (Input.GetKeyDown(KeyCode.Space)&& _grounded||waterchack)
+        if (Input.GetKeyDown(KeyCode.Space) && (_grounded || waterchack))
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce);
         }}
